@@ -1,3 +1,7 @@
+/* Example on http://docs.angularjs.org/guide/dev_guide.templates.filters.creating_filters
+ * used below.
+ */
+
 angular.module('restaurant', [])
 	.service('tableService', function() {
 		var tables = [
@@ -42,7 +46,19 @@ angular.module('restaurant', [])
 				return tables;
 			}
 		};
-	})
+	}).
+	filter('notReserved', function() {
+		return function(input) {
+			var out, i;
+			out = [];
+			for (i = 0; i < input.length; i+=1) {
+				if (!input[i].reserved) {
+					out.push(input[i]);
+				}
+			}
+			return out;
+		}
+	});
 
 function RestaurantOrderController($scope, tableService) {
 	$scope.tables = tableService.getTables();
