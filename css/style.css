@@ -1,13 +1,11 @@
-// killof default spacing
 *{
 	margin: 0;
 	padding: 0;
 }
-
-// aling center
 body{
 	text-align:center;
-	background:#ff0000;
+	background:#fff;
+	color:#000;
 }
 .wrapper{
 	text-align:left;
