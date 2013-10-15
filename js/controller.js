@@ -1,9 +1,20 @@
-/* Example on http://docs.angularjs.org/guide/dev_guide.templates.filters.creating_filters
- * used below.
- */
+var app = angular.module('restaurant', []);
 
-angular.module('restaurant', [])
-	.service('tableService', function() {
+app.config(['$routeProvider', function($routeProvider) {
+		$routeProvider
+		.when('/reserve', 
+			{
+				templateUrl: 'partial/reserve.html',
+				controller: 'TableReserveController'
+			});
+		$routeProvider.when('/order',
+			{
+				templateUrl: 'partial/order.html',
+				controller: 'RestaurantOrderController'
+			});
+	}]);
+
+app.service('tableService', function() {
 		var tables = [
 			{
 				id: 1,
