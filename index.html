@@ -35,10 +35,10 @@
 				<ul>
 					<li ng-repeat="table in tables" ng-click="selectTable(table)"
 						ng-class="{tableinfo: true, active:table.reserved, selected:selectedTable==table}">
-					Table {{table.id}}, reserved: {{table.reserved}}
+					Table {{table.id}}.
 						<ul>
-							<li ng-repeat="order in table.ordered">
-								{{order}}
+							<li ng-repeat="(key, order) in table.ordered">
+							{{order}}x {{key}}
 							</li>
 						</ul>	
 					</li>
