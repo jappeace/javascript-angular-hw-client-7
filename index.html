@@ -6,12 +6,19 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body ng-app="restaurant">
+		<header>
+			<h1><strong>port</strong>fino</h1>
+			<nav>
+				<a href="reserve">Reserve</a>
+				<a href="order">Order</a>
+			</nav>
+		</header>
 		<form ng-controller="TableReserveController">
 			<fieldset>
 			<legend>Order for a table</legend>
 			<select
 				ng-model="selectedTable"
-				ng-options="table.id for table in tables">
+				ng-options="table.name for table in tables">
 			</select>
 			<button ng-click="reserveTable(table)">Reserve</button>
 			</fieldset>
