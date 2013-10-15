@@ -13,12 +13,21 @@ body{
 	width:500px;
 	margin: 0 auto;
 }
-
+header{
+	color:#DD4444;
+	text-align:center;
+	background:url('../img/header.png');
+	border: solid #EE4444 5px;
+	border-radius:4px;
+}
+header a{
+	color:#fff;
+}
 h1{
 	margin-top:1em;
 }
 h2{
-	margin-top:0.5em;
+	margin-top:-0.5em;
 }
 h1, legend, strong, h2{
 	font-size:120%;
@@ -28,7 +37,9 @@ h2{
 	font-size:80%;
 }
 
-
+ul{
+	list-style:none;
+}
 .tableinfo {
 	background-color: #FFF000;
 }
@@ -36,7 +47,9 @@ h2{
 .tableinfo.active {
 	background-color: #000FFF;
 }
-
+.top-level > li{
+	border-left: 2px solid black;
+}
 .selected {
-	border: 2px solid black;
+	border-left: 2px solid green;
 }
