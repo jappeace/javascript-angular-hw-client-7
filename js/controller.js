@@ -5,35 +5,35 @@ angular.module('restaurant', [])
 				id: 1,
 				seats: 8,
 				reserved: false,
-				ordered: [],
+				ordered: {},
 				toString: tableToString
 			},
 			{
 				id: 2,
 				seats: 2,
 				reserved: false,
-				ordered: [],
+				ordered: {},
 				toString: tableToString
 			},
 			{
 				id: 3,
 				seats: 5,
 				reserved: false,
-				ordered: [],
+				ordered: {},
 				toString: tableToString
 			},
 			{
 				id: 4,
 				seats: 12,
 				reserved: false,
-				ordered: [],
+				ordered: {},
 				toString: tableToString
 			},
 			{
 				id: 5,
 				seats: 4,
 				reserved: true,
-				ordered: ["Cola", "Pizza", "food"],
+				ordered: {},
 				toString: tableToString
 			}];
 
@@ -49,7 +49,11 @@ function RestaurantOrderController($scope, tableService) {
 	$scope.selectedTable = $scope.tables[0];
 
 	$scope.addOrder = function(order) {
-		$scope.selectedTable.ordered.push(order);
+		if($scope.selectedTable.ordered[order] == undefined) {
+			$scope.selectedTable.ordered[order] = 1;
+		} else {
+			$scope.selectedTable.ordered[order]++;
+		}
 	}
 
 	$scope.selectTable = function(table) {
