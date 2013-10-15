@@ -1,9 +1,9 @@
 angular.module('restaurant', ['ngRoute', 'ngSanitize'])
-	.config(function($routeProvider) {
+	.config(["$routeProvider", function($routeProvider) {
 			$routeProvider.
-			when("/reserve",  {templateUrl:'reserve.html',  controller:TableReserveController}).
-			when("/order", {templateUrl:'order.html', controller:RestaurantOrderController});
-	})
+			when("/reserve",  {templateUrl:'reserve.html',  controller:'TableReserveController'}).
+			when("/order", {templateUrl:'order.html', controller:'RestaurantOrderController'});
+	}])
 	.service('tableService', function() {
 		var tables = [
 			{
