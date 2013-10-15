@@ -20,7 +20,8 @@
 				<legend>Reservation</legend>
 				<select
 					ng-model="selectedTable"
-					ng-options="table for table in tables">
+					ng-options="table for table in tables"
+					ng-init="selectedTable = options[0]">
 				</select>
 				<button ng-click="reserveTable(selectedTable)">Reserve</button>
 				</fieldset>
