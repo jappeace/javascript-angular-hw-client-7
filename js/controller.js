@@ -1,4 +1,5 @@
 var app = angular.module('restaurant', []);
+
 app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
 		.when('/reserve', 
@@ -12,6 +13,7 @@ app.config(['$routeProvider', function($routeProvider) {
 				controller: 'RestaurantOrderController'
 			});
 	}]);
+
 app.service('tableService', function() {
 		var tables = [
 			{
@@ -55,6 +57,18 @@ app.service('tableService', function() {
 				return tables;
 			}
 		};
+	}).
+	filter('notReserved', function() {
+		return function(input) {
+			var out, i;
+			out = [];
+			for (i = 0; i < input.length; i+=1) {
+				if (!input[i].reserved) {
+					out.push(input[i]);
+				}
+			}
+			return out;
+		}
 	});
 
 function RestaurantOrderController($scope, tableService) {
