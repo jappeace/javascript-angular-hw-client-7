@@ -22,17 +22,18 @@
 					ng-model="selectedTable"
 					ng-options="table.id for table in tables">
 				</select>
-				<button ng-click="reserveTable(table)">Reserve</button>
+				<button ng-click="reserveTable(selectedTable)">Reserve</button>
 				</fieldset>
 			</form>
 
-			<div ng-controller="RestaurantOrderController">
-				<input ng-model="order" type="text" name="order" />
-				<button ng-click="addOrder(order)">Add</button>
+		<div ng-controller="RestaurantOrderController">
+			<input ng-model="order" type="text" name="order" />
+			<button ng-click="addOrder(order)">Add</button>
 
 				<h1>Order for a table</h1>
 				<ul>
-					<li ng-repeat="table in tables" ng-click="selectTable(table)" ng-class="{tableinfo: true, active:table.reserved, selected:selectedTable==table}">
+					<li ng-repeat="table in tables" ng-click="selectTable(table)"
+						ng-class="{tableinfo: true, active:table.reserved, selected:selectedTable==table}">
 					Table {{table.id}}, reserved: {{table.reserved}}
 						<ul>
 							<li ng-repeat="order in table.ordered">
