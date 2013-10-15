@@ -21,7 +21,7 @@
 				<select
 					ng-model="selectedTable"
 					ng-options="table for table in tables | notReserved"
-					ng-init="selectedTable = options[0]">
+					ng-init="selectedTable = tables[0] | notReserved">
 				</select>
 				<button ng-click="reserveTable(selectedTable)">Reserve</button>
 				</fieldset>
