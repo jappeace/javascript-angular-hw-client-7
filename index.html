@@ -28,7 +28,7 @@
 			</form>
 			<div ng-controller="RestaurantOrderController">
 				<input ng-model="order" type="text" name="order" />
-				<button ng-click="addOrder(order)">Add</button>
+				<button  ng-click="addOrder(order)">Add</button>
 				<h1>Order for a table</h1>
 				<ul class="top-level">
 					<li ng-repeat="table in tables" ng-click="selectTable(table)"
