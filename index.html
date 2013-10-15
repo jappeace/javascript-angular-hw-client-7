@@ -1,9 +1,18 @@
 <html>
 	<head>
 		<title></title>
-		<script langauge="text/javascript" src="js/angular.js"></script>
+		<script src="js/angular.js"></script>
+		<script src="js/controller.js"></script>
 	</head>
-	<body ng-app>
-		<h1>RESTAURANTSSSCH</h1> 
+	<body ng-app="restaurant">
+		<div ng-controller="RestaurantOrderController">
+			<h1>Order for a table</h1>
+			<ul>
+				<!-- -->
+				<li ng-repeat="table in tables" ng-click="register-table">
+				Table {{table.id}}, reserved: {{table.reserved}} <span></span>
+				</li>
+			</ul>
+		</div>
 	</body>
 </html>
