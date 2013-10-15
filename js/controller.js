@@ -58,6 +58,6 @@ function TableReserveController($scope, tableService) {
 
 	$scope.reserveTable = function(table) {
 		$scope.reserveMessage = "You have reserved table " + table.id + "!";
-		console.log(table);
+		table.reserved = true;
 	};
 }
