@@ -1,5 +1,18 @@
-angular.module('restaurant', [])
-	.service('tableService', function() {
+var app = angular.module('restaurant', []);
+app.config(['$routeProvider', function($routeProvider) {
+		$routeProvider
+		.when('/reserve', 
+			{
+				templateUrl: 'partial/reserve.html',
+				controller: 'TableReserveController'
+			});
+		$routeProvider.when('/order',
+			{
+				templateUrl: 'partial/order.html',
+				controller: 'RestaurantOrderController'
+			});
+	}]);
+app.service('tableService', function() {
 		var tables = [
 			{
 				id: 1,
@@ -42,7 +55,7 @@ angular.module('restaurant', [])
 				return tables;
 			}
 		};
-	})
+	});
 
 function RestaurantOrderController($scope, tableService) {
 	$scope.tables = tableService.getTables();

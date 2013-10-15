@@ -5,41 +5,19 @@
 		<script src="js/controller.js"></script>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
-	<body ng-app="restaurant">
+	<body>
 		<div class="wrapper">
 			<header>
 				<h1><strong>port</strong>fino</h1>
 				<h2>Ristorante Iteliano</h2>
 				<nav>
-					<a href="reserve">Reserve</a>
-					<a href="order">Order</a>
+					<a href="#/reserve">Reserve</a>
+					<a href="#/order">Order</a>
 				</nav>
 			</header>
-			<form ng-controller="TableReserveController">
-				<fieldset>
-				<legend>Reservation</legend>
-				<select
-					ng-model="selectedTable"
-					ng-options="table for table in tables">
-				</select>
-				<button ng-click="reserveTable(selectedTable)">Reserve</button>
-				</fieldset>
-			</form>
-			<div ng-controller="RestaurantOrderController">
-				<input ng-model="order" type="text" name="order" />
-				<button ng-click="addOrder(order)">Add</button>
-				<h1>Order for a table</h1>
-				<ul class="top-level">
-					<li ng-repeat="table in tables" ng-click="selectTable(table)"
-						ng-class="{tableinfo: true, active:table.reserved, selected:selectedTable==table}">
-					Table {{table.id}}.
-						<ul>
-							<li ng-repeat="(key, order) in table.ordered">
-							{{order}}x {{key}}
-							</li>
-						</ul>	
-					</li>
-				</ul>
+			<div ng-app="restaurant">
+				<ng-view>
+				</ng-view>
 			</div>
 		</div>
 	</body>
