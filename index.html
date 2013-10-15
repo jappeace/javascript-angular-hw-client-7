@@ -9,7 +9,7 @@
 		<div class="wrapper">
 			<header>
 				<h1><strong>port</strong>fino</h1>
-			<h2>Ristorante Iteliano</h2>
+				<h2>Ristorante Iteliano</h2>
 				<nav>
 					<a href="reserve">Reserve</a>
 					<a href="order">Order</a>
@@ -25,11 +25,9 @@
 				<button ng-click="reserveTable(selectedTable)">Reserve</button>
 				</fieldset>
 			</form>
-
-		<div ng-controller="RestaurantOrderController">
-			<input ng-model="order" type="text" name="order" />
-			<button ng-click="addOrder(order)">Add</button>
-
+			<div ng-controller="RestaurantOrderController">
+				<input ng-model="order" type="text" name="order" />
+				<button ng-click="addOrder(order)">Add</button>
 				<h1>Order for a table</h1>
 				<ul>
 					<li ng-repeat="table in tables" ng-click="selectTable(table)"
