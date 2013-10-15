@@ -1,11 +1,11 @@
-
-			<form ng-controller="TableReserveController">
-				<fieldset>
-				<legend>Reservation</legend>
-				<select
-					ng-model="selectedTable"
-					ng-options="table for table in tables">
-				</select>
-				<button ng-click="reserveTable(selectedTable)">Reserve</button>
-				</fieldset>
-			</form>
+<form ng-controller="TableReserveController">
+	<fieldset>
+	<legend>Reservation</legend>
+	<select
+		ng-model="selectedTable"
+		ng-options="table for table in tables | notReserved"
+		ng-init="selectedTable = tables[0] | notReserved">
+	</select>
+	<button ng-click="reserveTable(selectedTable)">Reserve</button>
+	</fieldset>
+</form>
