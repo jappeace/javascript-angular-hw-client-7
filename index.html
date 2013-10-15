@@ -13,8 +13,7 @@
 				ng-model="selectedTable"
 				ng-options="table.id for table in tables">
 			</select>
-			<button ng-click="reserveTable(selectedTable)">Reserve</button><br>
-			{{ reserveMessage }}
+			<button ng-click="reserveTable(table)">Reserve</button>
 			</fieldset>
 		</form>
 
@@ -29,7 +28,7 @@
 						<li ng-repeat="order in table.ordered">
 							{{order}}
 						</li>
-					</ul>	
+					</ul>
 				</li>
 			</ul>
 		</div>
