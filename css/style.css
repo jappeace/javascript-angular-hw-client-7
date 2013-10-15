@@ -13,6 +13,5 @@
 
 
 .selected {
-	border-style: 1px solid black;
-	background-color: #AAAAAA;
+	border: 2px solid black;
 }
