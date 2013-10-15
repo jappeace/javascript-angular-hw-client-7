@@ -1,0 +1,17 @@
+
+			<div ng-controller="RestaurantOrderController">
+				<input ng-model="order" type="text" name="order" />
+				<button ng-click="addOrder(order)">Add</button>
+				<h1>Order for a table</h1>
+				<ul class="top-level">
+					<li ng-repeat="table in tables" ng-click="selectTable(table)"
+						ng-class="{tableinfo: true, active:table.reserved, selected:selectedTable==table}">
+					Table {{table.id}}.
+						<ul>
+							<li ng-repeat="(key, order) in table.ordered">
+							{{order}}x {{key}}
+							</li>
+						</ul>	
+					</li>
+				</ul>
+			</div>

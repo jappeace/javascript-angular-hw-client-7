@@ -1,0 +1,11 @@
+
+			<form ng-controller="TableReserveController">
+				<fieldset>
+				<legend>Reservation</legend>
+				<select
+					ng-model="selectedTable"
+					ng-options="table for table in tables">
+				</select>
+				<button ng-click="reserveTable(selectedTable)">Reserve</button>
+				</fieldset>
+			</form>
