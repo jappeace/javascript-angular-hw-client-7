@@ -47,3 +47,11 @@ function RestaurantOrderController($scope, tableService) {
 		$scope.selectedTable = table.id;
 	}
 }
+
+function TableReserveController($scope, tableService) {
+	$scope.tables = tableService.getTables();
+
+	$scope.reserveTable = function(table) {
+		console.log(table);
+	};
+}
