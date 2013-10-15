@@ -5,14 +5,15 @@
 		<script src="js/controller.js"></script>
 	</head>
 	<body ng-app="restaurant">
-		<div ng-controller="RestaurantOrderController">
+		<div ng-controller="TableReserveController">
 			<h1>Order for a table</h1>
-			<ul>
+			<select ng-model="table">
 				<!-- -->
-				<li ng-repeat="table in tables" ng-click="register-table">
-				Table {{table.id}}, reserved: {{table.reserved}} <span></span>
-				</li>
-			</ul>
+				<option ng-repeat="table in tables" ng-click="register-table">
+				Table {{table.id}}, reserved: {{table.reserved}}
+				</option>
+			</select>
+			<button ng-click="reserveTable(table)">Reserve</button>
 		</div>
 	</body>
 </html>

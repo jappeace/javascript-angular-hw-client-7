@@ -42,3 +42,11 @@ angular.module('restaurant', [])
 function RestaurantOrderController($scope, tableService) {
 	$scope.tables = tableService.getTables();
 }
+
+function TableReserveController($scope, tableService) {
+	$scope.tables = tableService.getTables();
+
+	$scope.reserveTable = function(table) {
+		console.log(table);
+	};
+}
