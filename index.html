@@ -26,15 +26,14 @@
 		</form>
 
 		<div ng-controller="RestaurantOrderController">
+			<input ng-model="order" type="text" name="order" />
+			<button ng-click="addOrder(order)">Add</button>
+
 			<h1>Order for a table</h1>
-			<span>
-				Selected: {{selectedTable}}
-			</span>
 			<ul>
 				<!-- -->
-				<li ng-repeat="table in tables" ng-click="selectTable(table)" ng-class="{tableinfo: true, active:table.reserved, selected:selectedTable==table.id}">
+				<li ng-repeat="table in tables" ng-click="selectTable(table)" ng-class="{tableinfo: true, active:table.reserved, selected:selectedTable==table}">
 				Table {{table.id}}, reserved: {{table.reserved}}
-				Selected: {{table.id == selectedTable}}
 					<ul>
 						<li ng-repeat="order in table.ordered">
 							{{order}}
