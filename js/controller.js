@@ -1,4 +1,9 @@
-angular.module('restaurant', [])
+angular.module('restaurant', ['ngRoute', 'ngSanitize'])
+	.config(function($routeProvider) {
+			$routeProvider.
+			when("/reserve",  {templateUrl:'reserve.html',  controller:TableReserveController}).
+			when("/order", {templateUrl:'order.html', controller:RestaurantOrderController});
+	})
 	.service('tableService', function() {
 		var tables = [
 			{
@@ -30,22 +35,26 @@ angular.module('restaurant', [])
 				seats: 4,
 				reserved: true,
 				ordered: ["Cola", "Pizza", "food"]
-			}];
+			}
+		];
 
 		return {
 			getTables: function() {
 				return tables;
 			}
 		};
-	})
-
+	});
+AppController.$inject = ['$scope', '$route'];
+function AppController($scope, $route) {
+	$scope.$route = $route;
+}
 function RestaurantOrderController($scope, tableService) {
 	$scope.tables = tableService.getTables();
 	$scope.selectedTable = 1;
 
 	$scope.selectTable = function(table) {
 		$scope.selectedTable = table.id;
-	}
+	};
 }
 
 function TableReserveController($scope, tableService) {
