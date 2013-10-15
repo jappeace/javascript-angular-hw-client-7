@@ -9,8 +9,14 @@
 			<h1>Order for a table</h1>
 			<ul>
 				<!-- -->
-				<li ng-repeat="table in tables" ng-click="register-table">
-				Table {{table.id}}, reserved: {{table.reserved}} <span></span>
+				<li ng-repeat="table in tables" ng-click="selectTable(table)" ng-class="{active:table.reserved, selected: {{table.id == selectedTable}}}">
+				
+					Table {{table.id}}, reserved: {{table.reserved}} <span></span>
+					<ul>
+						<li ng-repeat="order in table.ordered">
+							{{order}}
+						</li>
+					</ul>	
 				</li>
 			</ul>
 		</div>

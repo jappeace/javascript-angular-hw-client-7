@@ -28,8 +28,8 @@ angular.module('restaurant', [])
 			{
 				id: 5,
 				seats: 4,
-				reserved: false,
-				ordered: []
+				reserved: true,
+				ordered: ["Cola", "Pizza", "food"]
 			}];
 
 		return {
@@ -41,4 +41,9 @@ angular.module('restaurant', [])
 
 function RestaurantOrderController($scope, tableService) {
 	$scope.tables = tableService.getTables();
+	$scope.selectedTable = 1;
+
+	$scope.selectTable = function(table) {
+		$scope.selectedTable = table.id;
+	}
 }
