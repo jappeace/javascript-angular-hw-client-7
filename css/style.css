@@ -3,3 +3,15 @@
 
 /* Table display
  */
+.tableinfo {
+	background-color: #FFF000;
+}
+
+.tableinfo.active {
+	background-color: #000FFF;
+}
+
+
+.selected {
+	border: 2px solid black;
+}

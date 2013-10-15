@@ -18,24 +18,25 @@
 			<legend>Order for a table</legend>
 			<select
 				ng-model="selectedTable"
-				ng-options="table.name for table in tables">
+				ng-options="table.id for table in tables">
 			</select>
 			<button ng-click="reserveTable(table)">Reserve</button>
 			</fieldset>
 		</form>
 
 		<div ng-controller="RestaurantOrderController">
+			<input ng-model="order" type="text" name="order" />
+			<button ng-click="addOrder(order)">Add</button>
+
 			<h1>Order for a table</h1>
 			<ul>
-				<!-- -->
-				<li ng-repeat="table in tables" ng-click="selectTable(table)" ng-class="{active:table.reserved, selected: {{table.id == selectedTable}}}">
-				
-					Table {{table.id}}, reserved: {{table.reserved}} <span></span>
+				<li ng-repeat="table in tables" ng-click="selectTable(table)" ng-class="{tableinfo: true, active:table.reserved, selected:selectedTable==table}">
+				Table {{table.id}}, reserved: {{table.reserved}}
 					<ul>
 						<li ng-repeat="order in table.ordered">
 							{{order}}
 						</li>
-					</ul>
+					</ul>	
 				</li>
 			</ul>
 		</div>
