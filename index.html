@@ -3,10 +3,12 @@
 		<title></title>
 		<script src="js/angular.js"></script>
 		<script src="js/controller.js"></script>
+
 	</head>
 	<body ng-app="restaurant">
-		<div ng-controller="TableReserveController">
-			<h1>Order for a table</h1>
+		<form ng-controller="TableReserveController">
+			<fieldset>
+			<legend>Order for a table</legend>
 			<select ng-model="table">
 				<!-- -->
 				<option ng-repeat="table in tables" ng-click="register-table">
@@ -14,7 +16,8 @@
 				</option>
 			</select>
 			<button ng-click="reserveTable(table)">Reserve</button>
-		</div>
+			</fieldset>
+		</form>
 
 		<div ng-controller="RestaurantOrderController">
 			<h1>Order for a table</h1>
