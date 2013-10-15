@@ -21,11 +21,14 @@
 
 		<div ng-controller="RestaurantOrderController">
 			<h1>Order for a table</h1>
+			<span>
+				Selected: {{selectedTable}}
+			</span>
 			<ul>
 				<!-- -->
-				<li ng-repeat="table in tables" ng-click="selectTable(table)" ng-class="{active:table.reserved, selected: {{table.id == selectedTable}}}">
-				
-					Table {{table.id}}, reserved: {{table.reserved}} <span></span>
+				<li ng-repeat="table in tables" ng-click="selectTable(table)" ng-class="{'tableinfo': true, 'active':table.reserved, 'selected': {{selectedTable==table.id}}}">
+				Table {{table.id}}, reserved: {{table.reserved}}
+				Selected: {{table.id == selectedTable}}
 					<ul>
 						<li ng-repeat="order in table.ordered">
 							{{order}}

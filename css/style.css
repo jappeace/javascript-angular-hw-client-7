@@ -3,3 +3,16 @@
 
 /* Table display
  */
+.tableinfo {
+	background-color: #FFF000;
+}
+
+.tableinfo.active {
+	background-color: #000FFF;
+}
+
+
+.selected {
+	border-style: 1px solid black;
+	background-color: #AAAAAA;
+}

@@ -41,10 +41,19 @@ angular.module('restaurant', [])
 
 function RestaurantOrderController($scope, tableService) {
 	$scope.tables = tableService.getTables();
-	$scope.selectedTable = 1;
+	$scope.selectedTable = 3;
 
 	$scope.selectTable = function(table) {
+		table.reserved = !table.reserved;
+		console.log(table.reserved);
 		$scope.selectedTable = table.id;
+		console.log("selected " + table.id);
+		console.log($scope.selectedTable);
+	}
+
+	$scope.test = function() {
+		console.log(test);
+		return true;
 	}
 }
 
