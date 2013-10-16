@@ -1,3 +1,7 @@
+function tableToString() {
+	return "Table " + this.id + " with " + this.seats + " seats";
+}
+
 var app = angular.module('restaurant', []);
 
 app.config(['$routeProvider', function($routeProvider) {
@@ -68,7 +72,7 @@ app.service('tableService', function() {
 				}
 			}
 			return out;
-		}
+		};
 	});
 
 function RestaurantOrderController($scope, tableService) {
@@ -76,17 +80,16 @@ function RestaurantOrderController($scope, tableService) {
 	$scope.selectedTable = $scope.tables[0];
 
 	$scope.addOrder = function(order) {
-		if($scope.selectedTable.ordered[order] == undefined) {
+		if($scope.selectedTable.ordered[order] === undefined) {
 			$scope.selectedTable.ordered[order] = 1;
 		} else {
 			$scope.selectedTable.ordered[order]++;
 		}
-	}
+	};
 
 	$scope.selectTable = function(table) {
 		$scope.selectedTable = table;
-	}
-
+	};
 }
 
 function TableReserveController($scope, tableService) {
@@ -96,8 +99,4 @@ function TableReserveController($scope, tableService) {
 		$scope.reserveMessage = "You have reserved table " + table.id + "!";
 		table.reserved = true;
 	};
-}
-
-function tableToString() {
-	return "Table " + this.id + " with " + this.seats + " seats";
 }
