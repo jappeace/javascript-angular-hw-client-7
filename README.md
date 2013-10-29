@@ -1,4 +1,2 @@
-#Awesome restaurant reservation system
-## based upon angular js
-###Awesome..
-
+# Restaurant reservatie systeem
+Dit restaurant reservatie systeem maakt gebruikt van AngularJS.
