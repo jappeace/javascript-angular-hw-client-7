@@ -48,9 +48,9 @@ ul{
 }
 
 .tableinfo.active {
-	border-bottom: 1em solid  #EE4444;
-	border-top: 1em solid  #EE4444;
-	background-color: #EE4444;
+	border-bottom: 1em solid  #2E2EFE;
+	border-top: 1em solid  #2E2EFE;
+	background-color: #2E2EFE;
 }
 .top-level{
 	overflow:hidden;
@@ -63,6 +63,6 @@ ul{
 	float: left;
 }
 .selected{
-	border-top: 1em solid #F4FA58!important;
-	border-bottom: 1em solid #F4FA58!important;
+	border-top: 1em solid #64FE2E!important;
+	border-bottom: 1em solid #64FE2E!important;
 }
