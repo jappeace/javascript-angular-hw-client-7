@@ -1,3 +1,8 @@
+/* Authors: Jappie Klooster
+ *          Chris Mulder
+ *          Joep Kemperman
+ */
+
 function tableToString() {
 	"use strict";
 	return "Table " + this.id + " with " + this.seats + " seats";
